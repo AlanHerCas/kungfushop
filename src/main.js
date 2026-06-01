@@ -6,3 +6,6 @@ import './js/newsletter.js';
 import './js/carruselOfertas.js';
 import './js/masVendidos.js';
 import './js/testimonios.js';
+import './js/banner.js';
+import './js/Info.js';
+import './js/navBar.js'
