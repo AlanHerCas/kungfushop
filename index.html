@@ -63,6 +63,8 @@
     </nav>
   </header>
 
+
+
   <div class="navbar-spacer"></div>
 
   <div id="app">
@@ -111,38 +113,159 @@
       </div>
     </section>
 
-    <section class="informacion">
-        <div class="info-container">
-            <div class="envio">
-                <div class="titulos">
-                    <h3>Envío Gratis</h3>
-                    <p>En compras mayores a $999</p>
-                </div>
-                <img src="./src/assets/envio.svg" alt="Envío Gratis" class="info-icon" width="50" height="50">
-            </div>
-            <div class="devo">
-                <div class="titulos">
-                    <h3>Devoluciones faciles</h3>
-                    <p>Hasta 30 dias de cambio</p>
-                </div>
-                <img src="./src/assets/devoluciones.svg" alt="Devoluciones" class="info-icon" width="50" height="50">
-            </div>
-            <div class="pago">
-                <div class="titulos">
-                    <h3>Pago 100% Seguro</h3>
-                    <p>Tus datos siempre protegidos</p>
-                </div>
-                <img src="./src/assets/pago-seguro.svg" alt="Pago Seguro" class="info-icon" width="50" height="50">
-            </div>
-            <div class="atencion">
-                <div class="titulos">
-                    <h3>Atención al Cliente</h3>
-                    <p>Soporte disponible 24/7</p>
-                </div>
-                <img src="./src/assets/atencion.svg" alt="atencion al cliente" class="info-icon" width="50" height="50">
-            </div>
+    <section id="ofertas" class="ofertas-section">
+
+      <div class="ofertas-info">
+        <h2>
+          OFERTAS <br>
+          <span>DE LA SEMANA</span>
+        </h2>
+
+        <p>
+          Descuentos exclusivos <br>
+          por tiempo limitado
+        </p>
+
+      </div>
+
+      <div class="ofertas-grid">
+
+        <div class="oferta-card">
+          <span class="descuento">-30%</span>
+          <img src="img/zapatos.jpg" alt="zapatos">
+          <h4>CALZADO</h4>
         </div>
+
+        <div class="oferta-card">
+          <span class="descuento">-25%</span>
+          <img src="img/ropa.png" alt="ropa">
+          <h4>ROPA</h4>
+        </div>
+
+        <div class="oferta-card">
+          <span class="descuento">-20%</span>
+          <img src="img/armas.jpg" alt="accesorios">
+          <h4>ACCESORIOS</h4>
+        </div>
+
+        <div class="oferta-card">
+          <span class="descuento">-15%</span>
+          <img src="img/equipo.jpg" alt="equipamiento">
+          <h4>EQUIPAMIENTO</h4>
+        </div>
+
+      </div>
+
     </section>
+  
+    <section id="mas-vendidos" class="py-5">
+      <div class="container container-xxl">
+        <div class="mv-wrap">
+          <div class="mv-left">
+            <div class="mv-title"><div>MÁS</div> <span>VENDIDOS</span></div>
+            <button class="mv-btn">VER CATÁLOGO</button>
+          </div>
+          <div class="mv-carousel">
+            <div class="mv-track" id="track"></div>
+            <div class="mv-controls">
+              <button id="prev" aria-label="Anterior">&#8592;</button>
+              <button id="next" aria-label="Siguiente">&#8594;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="beneficios">
+      <div class="info-container">
+              <div class="envio">
+                  <div class="titulos">
+                      <h3>Envío Gratis</h3>
+                      <p>En compras mayores a $999</p>
+                  </div>
+                  <img src="./src/assets/envio.svg" alt="Envío Gratis" class="info-icon" width="50" height="50">
+              </div>
+              <div class="devo">
+                  <div class="titulos">
+                      <h3>Devoluciones faciles</h3>
+                      <p>Hasta 30 dias de cambio</p>
+                  </div>
+                  <img src="./src/assets/devoluciones.svg" alt="Devoluciones" class="info-icon" width="50" height="50">
+              </div>
+              <div class="pago">
+                  <div class="titulos">
+                      <h3>Pago 100% Seguro</h3>
+                      <p>Tus datos siempre protegidos</p>
+                  </div>
+                  <img src="./src/assets/pago-seguro.svg" alt="Pago Seguro" class="info-icon" width="50" height="50">
+              </div>
+              <div class="atencion">
+                  <div class="titulos">
+                      <h3>Atención al Cliente</h3>
+                      <p>Soporte disponible 24/7</p>
+                  </div>
+                  <img src="./src/assets/atencion.svg" alt="atencion al cliente" class="info-icon" width="50" height="50">
+              </div>
+          </div>
+    </section>
+
+    <section id="testimonios" class="py-5 bg-light-custom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-3 text-center text-md-start mb-4 mb-md-0">
+            <h2 class="fw-bold text-uppercase titulo-testimonios">
+              Lo que dicen <br>
+              <span>nuestros clientes</span>
+            </h2>
+          </div>
+          <div class="col-12 col-md-9">
+            <div class="row g-3">
+              
+              <div class="col-12 col-lg-4">
+                <div class="card tarjeta-animada h-100 border-0 shadow-sm p-3" style="border-radius: 15px;">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=60" alt="Carlos M." class="rounded-circle" width="60" height="60" style="object-fit: cover;">
+                    <div>
+                      <div class="text-warning mb-1">★★★★★</div>
+                      <p class="mb-1 small">"Excelentes productos. La calidad es increíble y el envío fue súper rápido."</p>
+                      <h6 class="fw-bold mb-0 small">Carlos M.</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-lg-4">
+                <div class="card tarjeta-animada h-100 border-0 shadow-sm p-3" style="border-radius: 15px;">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop&q=60" alt="Ana P." class="rounded-circle" width="60" height="60" style="object-fit: cover;">
+                    <div>
+                      <div class="text-warning mb-1">★★★★★</div>
+                      <p class="mb-1 small">"Me encanta la variedad de productos y los descuentos que tienen."</p>
+                      <h6 class="fw-bold mb-0 small">Ana P.</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-lg-4">
+                <div class="card tarjeta-animada h-100 border-0 shadow-sm p-3" style="border-radius: 15px;">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&auto=format&fit=crop&q=60" alt="Jorge R." class="rounded-circle" width="60" height="60" style="object-fit: cover;">
+                    <div>
+                      <div class="text-warning mb-1">★★★★★</div>
+                      <p class="mb-1 small">"La mejor tienda deportiva, 100% recomendable."</p>
+                      <h6 class="fw-bold mb-0 small">Jorge R.</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
