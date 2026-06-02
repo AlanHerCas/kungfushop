@@ -13,6 +13,7 @@
   --navbar-scrolled-bg: rgba(10, 10, 12, 0.85);
   --font-sans: 'Outfit', sans-serif;
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --card-information-bg: #000000;
 }
 
 [data-theme="light"] {
@@ -219,6 +220,55 @@ body {
   box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
 }
 
+.info-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-top: 3rem;
+  background-color: var(--card-information-bg);
+  justify-content: space-around;
+}
+
+.info-container h3{
+  color: var(--primary);
+  text-shadow: 0 0 10px rgba(230, 57, 70, 0.5);
+}
+
+.envio {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem;
+}
+
+.devo {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem;
+}
+.pago {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem;
+}
+.atencion {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem;
+}
+
+.titulos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .bg-light-custom {
   background-color: var(--bg-dark) !important;
 }
