@@ -187,3 +187,34 @@ body {
 [data-theme="light"] .btn-theme-toggle {
   background: rgba(0, 0, 0, 0.03);
 }
+
+#inicio {
+  background: linear-gradient(rgba(10, 10, 12, 0.75), rgba(10, 10, 12, 0.75)), url('./src/assets/Banner-LandingPage.svg') no-repeat center center;
+  background-size: cover;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+}
+
+[data-theme="light"] #inicio {
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('./src/assets/Banner-LandingPage.svg') no-repeat center center;
+  background-size: cover;
+}
+
+#titulo-rojo {
+  color: var(--primary);
+  text-shadow: 0 0 15px rgba(230, 57, 70, 0.3);
+}
+
+#comprar-ahora {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  transition: var(--transition-smooth);
+}
+
+#comprar-ahora:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+}
