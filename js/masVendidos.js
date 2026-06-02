@@ -1,30 +1,29 @@
 const productos = [
-  { nombre: "Chacos",             precio: "$2,499", img: "https://www.asiana.com.mx/wp-content/uploads/2022/04/img-414-2.jpg" },
-  { nombre: "Katana",             precio: "$1,999", img: "https://thumbs.dreamstime.com/b/funda-japonesa-de-katana-en-llamas-385734709.jpg" },
-  { nombre: "Sai",                precio: "$1,999", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQueNnWtgH_K00lBtahAqynYoZbUEtFQ0HDXA&s" },
-  { nombre: "Espada Jian",        precio: "$1,599", img: "https://katana.store/cdn/shop/files/katana-vs-jian.jpg" },
-  { nombre: "Guan Dao",           precio: "$1,599", img: "https://www.asiana.com.mx/wp-content/uploads/2022/04/img-414-2.jpg" },
-  { nombre: "Cuchillos mariposa", precio: "$1,599", img: "https://www.asiana.com.mx/wp-content/uploads/2022/04/img-414-2.jpg" },
-  { nombre: "Alabarda",           precio: "$1,599", img: "https://www.asiana.com.mx/wp-content/uploads/2022/04/img-414-2.jpg" },
-  { nombre: "Domi",               precio: "$1,299", img: "https://www.asiana.com.mx/wp-content/uploads/2022/04/img-414-2.jpg" }
+  { nombre: "Chacos", precio: "$800", img: "https://www.asiana.com.mx/wp-content/uploads/2022/04/img-414-2.jpg" },
+  { nombre: "jian", precio: "$1,200$", img: "https://internalwudangstore.net/wp-content/uploads/2016/11/SW91-tai-chi-jian.jpg" },
+  { nombre: "Sai", precio: "$1,999", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQueNnWtgH_K00lBtahAqynYoZbUEtFQ0HDXA&s" },
+  { nombre: "Espada JiaSn", precio: "$5,000", img: "https://katana.store/cdn/shop/files/katana-vs-jian.jpg" },
+  { nombre: "Guan Dao", precio: "$6,000", img: "https://internalwudangstore.net/wp-content/uploads/2017/04/2-Guan-Dao.jpg" },
+  { nombre: "Gou", precio: "$3,500", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZXhTSHmGV9DUpJfdTgXIPAceX276oj7Qpog&s" },
+  { nombre: "Alabarda", precio: "$7,000", img: "https://fbi.cults3d.com/uploaders/13650677/illustration-file/60cb1127-5ed7-4c10-949c-26a3984873f7/HMain.jpg" },
+  { nombre: "Domi", precio: "$2,500", img: "https://m.media-amazon.com/images/I/71zWzJtmiyL.jpg" }
 ];
 
-const POR_SLIDE = 4;  // cuántos productos por diapositiva
+const POR_SLIDE = 4;
 const track = document.getElementById("track");
-let actual = 0;       // diapositiva actual
+let actual = 0;
 
-// 1. CREAR LAS DIAPOSITIVAS
+// CREAR DIAPOSITIVAS
 for (let i = 0; i < productos.length; i += POR_SLIDE) {
-
   const slide = document.createElement("div");
   slide.className = "mv-slide";
 
-  // Toma 4 productos y crea una tarjeta por cada uno
   productos.slice(i, i + POR_SLIDE).forEach(p => {
     slide.innerHTML += `
       <div class="mv-card">
         <img src="${p.img}" alt="${p.nombre}">
         <h4>${p.nombre}</h4>
+        <div>⭐⭐⭐⭐⭐</div>
         <p>${p.precio}</p>
       </div>
     `;
@@ -33,14 +32,12 @@ for (let i = 0; i < productos.length; i += POR_SLIDE) {
   track.appendChild(slide);
 }
 
-// 2. FUNCIÓN PARA MOVERSE
-const total = track.children.length; // número de diapositivas
+const total = track.children.length;
 
 function mover(dir) {
-  actual = (actual + dir + total) % total; // % total hace que sea circular
+  actual = (actual + dir + total) % total;
   track.style.transform = `translateX(-${actual * 100}%)`;
 }
 
-// 3. CONECTAR LAS FLECHAS
 document.getElementById("prev").onclick = () => mover(-1);
 document.getElementById("next").onclick = () => mover(1);
