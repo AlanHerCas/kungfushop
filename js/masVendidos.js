@@ -9,31 +9,50 @@ const productos = [
   { nombre: "Domi", precio: "$2,500", img: "https://m.media-amazon.com/images/I/71zWzJtmiyL.jpg" }
 ];
 
-const POR_SLIDE = 4;
+function getPorSlide() {
+  if (window.innerWidth < 576) return 1;
+  if (window.innerWidth < 992) return 2;
+  return 4;
+}
+
+let porSlide = getPorSlide();
 const track = document.getElementById("track");
 let actual = 0;
 
-for (let i = 0; i < productos.length; i += POR_SLIDE) {
-  const slide = document.createElement("div");
-  slide.className = "mv-slide";
-
-  productos.slice(i, i + POR_SLIDE).forEach(p => {
-    slide.innerHTML += `
-      <div class="mv-card">
-        <img src="${p.img}" alt="${p.nombre}">
-        <h4>${p.nombre}</h4>
-        <div>⭐⭐⭐⭐⭐</div>
-        <p>${p.precio}</p>
-      </div>
-    `;
-  });
-
-  track.appendChild(slide);
+function renderCarousel() {
+  track.innerHTML = "";
+  for (let i = 0; i < productos.length; i += porSlide) {
+    const slide = document.createElement("div");
+    slide.className = "mv-slide";
+    productos.slice(i, i + porSlide).forEach(p => {
+      slide.innerHTML += `
+        <div class="mv-card">
+          <img src="${p.img}" alt="${p.nombre}">
+          <h4>${p.nombre}</h4>
+          <div>⭐⭐⭐⭐⭐</div>
+          <p>${p.precio}</p>
+        </div>
+      `;
+    });
+    track.appendChild(slide);
+  }
+  actual = 0;
+  track.style.transform = "translateX(0)";
 }
 
-const total = track.children.length;
+renderCarousel();
+
+window.addEventListener("resize", () => {
+  const newPorSlide = getPorSlide();
+  if (newPorSlide !== porSlide) {
+    porSlide = newPorSlide;
+    renderCarousel();
+  }
+});
 
 function mover(dir) {
+  const total = track.children.length;
+  if (total === 0) return;
   actual = (actual + dir + total) % total;
   track.style.transform = `translateX(-${actual * 100}%)`;
 }
